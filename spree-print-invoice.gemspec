@@ -13,11 +13,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
   s.authors      = 'Spree Community'
 
-<<<<<<< HEAD
-  s.add_dependency('prawn', '0.8.4')
-  s.add_dependency('spree_core', '~> 1.3.1')
-=======
   s.add_dependency('prawn', '~> 1.0.0.rc1')
-  s.add_dependency('spree_core', '~> 1.2.0')
->>>>>>> origin/prawn-1-0
+  s.add_dependency('spree_core', '~> 1.3.1')
 end
+
