@@ -4,7 +4,7 @@ require 'prawn_handler'
 module Spree
   module PrintInvoice
     def self.config(&block)
-      yield(Spree::PrintInvoice::Config)
+      yield(Spree::GoogleBase::Config)
     end
   end
 end
