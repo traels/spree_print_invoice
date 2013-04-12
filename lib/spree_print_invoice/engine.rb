@@ -5,11 +5,7 @@ module SpreePrintInvoice
     initializer "spree.print_invoice.environment", :before => :load_config_initializers do |app|
       Spree::PrintInvoice::Config = Spree::PrintInvoiceConfiguration.new
     end
-    
-    initializer "spree.print_invoice.mimetypes" do |app|
-      Mime::Type.register('application/pdf', :pdf) unless Mime::Type.lookup_by_extension(:pdf)
-    end
-    
+        
     def self.activate
 
       Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
