@@ -2,15 +2,30 @@
 
 en:
   customer_invoice: Customer Invoice
-  footer_left: "Return in Other info"
-  footer_left2: " 14 days or never"
+  footer_left1: "Company Name -  Company address"
+  footer_left2: "Company registration 1"
 
-  footer_right: "Company  Phone  www "
-  footer_right2: " My great company 040 146 1222 www.gohereoften.com"
-  
+  footer_right1: "Phone - email"
+  footer_right2: "Company registration 1"
+
   print_note: This is not an original invoice (DO NOT SEND THIS TO CUSTOMER)
-  
+
   invoice_print: Print Invoice
   packaging_slip_print: Print Slip
   packaging_slip: Packaging Slip
-  
+
+  order_payment_via: "%{gateway} Online Payment #%{number} on %{date}"
+  return_note: "NOTE:"
+  return_message: |
+    In the event of any damage to the Products ordered during delivery, you must complain to Isabelle Dufour,
+    by phone, email or postmail within three business days after delivery.
+  no_vat: "VAT not applicable, article 293 B of the Code Général des Impôts"
+  anomaly_message: |
+    The recipient must check the condition of the merchandise on reception.
+    Any anomaly noted [damaged parcel(s), missing product(s) in comparison with the delivery note
+    or damaged product(s)] must be notified within three business days after delivery.
+    Please, use the following area to notify the noted anomaly.
+  print_invoice:
+    item_name: Item Name or SKU
+    'en': "in English"
+    'fr': "in French"
