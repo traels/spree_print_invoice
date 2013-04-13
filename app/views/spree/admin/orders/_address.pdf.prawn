@@ -1,10 +1,9 @@
-# Address Stuff
+# Address block
 
 bill_address = @order.bill_address
 ship_address = @order.ship_address
 anonymous = @order.email =~ /@example.net$/
 
-bounding_box [0,600], :width => 540 do
   move_down 2
   address_cell_billing = make_cell(:content => t(:billing_address), :font_style => :bold)
   address_cell_shipping = make_cell(:content => t(:shipping_address), :font_style => :bold)
@@ -33,4 +32,3 @@ bounding_box [0,600], :width => 540 do
       :borders => [:top, :bottom, :right, :left],
       :padding => [2, 6, 2, 6]
     }
-end
