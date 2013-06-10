@@ -21,14 +21,11 @@ window.MyNamespace.Uri = window.MyNamespace.Uri or {}
     baseUrl + "?" + otherQueryStringParameters + newQueryStringParameter
 ) window.MyNamespace.Uri
 
-
-
 $(document).ready ->
-
   $("#print_invoice_language").change (e) ->
 	  selected_language = $(this).val()
 	  invoice_buttons = $('[data-hook="admin_order_print_buttons"]').children(".button")
 	  invoice_buttons.each (index) ->
-		  originalUrl = $(this).attr('href')
+		  originalUrl = $(this).prop("href")
 		  changedUrl = MyNamespace.Uri.SetQueryStringParameter(originalUrl, "language", selected_language)
-		  $(this).attr('href', changedUrl)
+		  $(this).prop("href", changedUrl)

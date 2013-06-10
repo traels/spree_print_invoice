@@ -1,11 +1,11 @@
-<% if @order.completed_at? %>
+<% if @order and @order.completed_at? %>
 	<div data-hook="admin_order_print_buttons">
-		<% buttons = Spree::PrintInvoice::Config[:print_buttons].split(",").collect{|b| b } %>
+		<% buttons = Spree::PrintInvoice::Config[:print_buttons].split(',').collect{ |b| b.strip } %>
 		<%  buttons.each do |button| %>
-		    <%= link_to t("#{button}_print"), spree.admin_order_path(@order, :format => :pdf, :template => button, :language => I18n.locale.to_s), :class => 'button', :target => '_blank'  %>
+		    <%= link_to Spree.t("#{button}_print"), spree.admin_order_path(@order, format: :pdf, template: button, language: I18n.locale.to_s), class: 'button', target: '_blank' %>
 		<% end %>
 		<% if I18n.available_locales && I18n.available_locales.count > 1 %>
-			<%= select("print_invoice", "language", I18n.available_locales.collect { |l| [  I18n.t(l, :scope => :print_invoice), l.to_s] }, {:selected => I18n.locale.to_s}) %>
+			<%= select('print_invoice', 'language', I18n.available_locales.collect { |l| [I18n.t(l, scope: :print_invoice), l.to_s] }, {selected: I18n.locale.to_s} %>
 		<% end %>
 	</div>
-<% end %> 
+<% end %>
