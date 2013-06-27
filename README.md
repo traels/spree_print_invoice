@@ -4,8 +4,6 @@
 [![Dependency Status](https://gemnasium.com/futhr/spree_print_invoice.png)](https://gemnasium.com/futhr/spree_print_invoice)
 [![Coverage Status](https://coveralls.io/repos/futhr/spree_print_invoice/badge.png?branch=master)](https://coveralls.io/r/futhr/spree_print_invoice)
 
-**NOTE: THIS IS WIP FORK FOR SPREE 2.x**
-
 This extension provides a "Print Invoice" button on the Admin Orders view screen which generates a PDF of the order details.
 
 ## Installation
@@ -47,21 +45,9 @@ Use above feature for your own template if you want. For each button_name, defin
 * Tests :/
 * Next receipts and then product related stuff with barcodes.
 
-## Contributing
-
-* Fork the repo
-* Clone your repo `git clone git@github.com:mrhelpful/spree_print_invoice.git`
-* Create branch for your pull request `git checkout -b fix-something`
-* Run `bundle`
-* Run `bundle exec rake test_app` to create the test application in `spec/dummy`
-* Make your changes
-* Ensure specs pass by running `bundle exec rake`
-* Make sure yor changes has test coverage `open coverage/index.html`
-* Submit your pull request
-
 ## Prawn-handler
 
-A Rails template handler for PDF library [Prawn](http://prawn.majesticseacreature.com/). Prawn-handler is lightweight, simple, and less of a hassle to use.
+A Rails template handler for PDF library [Prawn][1]. Prawn-handler is lightweight, simple, and less of a hassle to use.
 
 ### Usage
 
@@ -96,4 +82,36 @@ This is accomplished without `instance_eval`, so that access to instance variabl
 * Initially written by [Roman Le Négrate](http://roman.flucti.com) ([contact](mailto:roman.lenegrate@gmail.com)).
 * Adopted to Rails 3 by [Torsten Rüger](http://github.com/dancinglightning)
 
-Copyright (c) 2013 Roman Le Négrate, Torsten Rüger, released under the New BSD License
+### Contributing
+
+In the spirit of [free software][2], **everyone** is encouraged to help improve this project.
+
+Here are some ways *you* can contribute:
+
+* by using prerelease versions
+* by reporting [bugs][3]
+* by suggesting new features
+* by writing or editing documentation
+* by writing specifications
+* by writing code (*no patch is too small*: fix typos, add comments, clean up inconsistent whitespace)
+* by refactoring code
+* by resolving [issues][3]
+* by reviewing patches
+
+Starting point:
+
+* Fork the repo
+* Clone your repo
+* Run `bundle`
+* Run `bundle exec rake test_app` to create the test application in `spec/test_app`
+* Make your changes and follow this [Style Guide][4]
+* Ensure specs pass by running `bundle exec rspec spec`
+* Submit your pull request
+
+Copyright (c) 2013 Roman Le Négrate, Torsten Rüger, released under the [New BSD License][5]
+
+[1]: http://prawn.majesticseacreature.com
+[2]: http://www.fsf.org/licensing/essays/free-sw.html
+[3]: https://github.com/spree/spree_print_invoice/issues
+[4]: https://github.com/thoughtbot/guide
+[5]: https://github.com/spree/spree_print_invoice/tree/master/LICENSE
