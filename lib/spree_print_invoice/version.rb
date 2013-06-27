@@ -1,3 +1,3 @@
 module SpreePrintInvoice
-  VERSION = '1.1'.freeze
+  VERSION = '1.1.0'
 end
