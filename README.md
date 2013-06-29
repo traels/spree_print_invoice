@@ -8,12 +8,12 @@ This extension provides a "Print Invoice" button on the Admin Orders view screen
 
 ## Installation
 
-1. The gem relies only on the prawn gem, to install you need to add the following lines to your Gemfile
+1. The gem relies only on the prawn gem, to install you need to add the following lines to your `Gemfile`:
 ```ruby
 gem 'spree_print_invoice' , github: 'spree/spree_print_invoice'
 ```
 
-2. run bundler
+2. Run bundler
 ```
 bundle install
 ```
@@ -91,6 +91,7 @@ Here are some ways *you* can contribute:
 * by using prerelease versions
 * by reporting [bugs][3]
 * by suggesting new features
+* by writing [translations][6]
 * by writing or editing documentation
 * by writing specifications
 * by writing code (*no patch is too small*: fix typos, add comments, clean up inconsistent whitespace)
@@ -102,7 +103,7 @@ Starting point:
 
 * Fork the repo
 * Clone your repo
-* Run `bundle`
+* Run `bundle install`
 * Run `bundle exec rake test_app` to create the test application in `spec/test_app`
 * Make your changes and follow this [Style Guide][4]
 * Ensure specs pass by running `bundle exec rspec spec`
@@ -115,3 +116,4 @@ Copyright (c) 2013 Roman Le Négrate, Torsten Rüger, released under the [New BS
 [3]: https://github.com/spree/spree_print_invoice/issues
 [4]: https://github.com/thoughtbot/guide
 [5]: https://github.com/spree/spree_print_invoice/tree/master/LICENSE
+[6]: http://www.localeapp.com/projects/4941
