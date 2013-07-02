@@ -79,7 +79,7 @@ This is accomplished without `instance_eval`, so that access to instance variabl
 
 ## Kudos
 
-* Initially written by [Roman Le Négrate](http://roman.flucti.com) ([contact](mailto:roman.lenegrate@gmail.com)).
+* Initially written by [Roman Le Négrate](https://github.com/Roman2K)
 * Adopted to Rails 3 by [Torsten Rüger](http://github.com/dancinglightning)
 
 ### Contributing
