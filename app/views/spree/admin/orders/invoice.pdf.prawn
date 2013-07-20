@@ -142,7 +142,7 @@ repeat(:all) do
 end
 
 # PAGE NUMBER
-string  = "page <page> #{Spree.t(:of)} <total>"
+string  = "#{Spree.t(:page)} <page> #{Spree.t(:of)} <total>"
 options = {
   at: [bounds.right - 150, 0],
   width: 150,
