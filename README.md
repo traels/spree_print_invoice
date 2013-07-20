@@ -115,5 +115,5 @@ Copyright (c) 2013 Roman Le Négrate, Torsten Rüger, released under the [New BS
 [2]: http://www.fsf.org/licensing/essays/free-sw.html
 [3]: https://github.com/spree/spree_print_invoice/issues
 [4]: https://github.com/thoughtbot/guide
-[5]: https://github.com/spree/spree_print_invoice/tree/master/LICENSE
+[5]: https://github.com/spree/spree_print_invoice/tree/master/LICENSE.md
 [6]: http://www.localeapp.com/projects/4941
