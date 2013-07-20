@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_runtime_dependency 'spree', '~> 2.0'
+  s.add_runtime_dependency 'spree', '~> 2.0.3'
   s.add_runtime_dependency 'prawn', '~> 1.0.0.rc2'
 
   s.add_development_dependency 'capybara', '~> 2.1.0'
@@ -33,7 +33,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3', '~> 1.3.7'
   s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'shoulda-matchers', '~> 2.2'
   s.add_development_dependency 'i18n-spec', '~> 0.4.0'
   s.add_development_dependency 'fuubar', '>= 0.0.1'
+  s.add_development_dependency 'guard-rspec'
+  s.add_development_dependency 'launchy'
+  s.add_development_dependency 'coveralls'
   s.add_development_dependency 'pry-rails'
 end
