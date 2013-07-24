@@ -1,8 +1,8 @@
 # Spree Print Invoice
 
-[![Build Status](https://secure.travis-ci.org/futhr/spree_print_invoice.png?branch=master)](http://travis-ci.org/futhr/spree_print_invoice)
+[![Build Status](https://secure.travis-ci.org/futhr/spree_print_invoice.png?branch=2-0-stable)](http://travis-ci.org/futhr/spree_print_invoice)
 [![Dependency Status](https://gemnasium.com/futhr/spree_print_invoice.png)](https://gemnasium.com/futhr/spree_print_invoice)
-[![Coverage Status](https://coveralls.io/repos/futhr/spree_print_invoice/badge.png?branch=master)](https://coveralls.io/r/futhr/spree_print_invoice)
+[![Coverage Status](https://coveralls.io/repos/futhr/spree_print_invoice/badge.png?branch=2-0-stable)](https://coveralls.io/r/futhr/spree_print_invoice)
 
 This extension provides a "Print Invoice" button on the Admin Orders view screen which generates a PDF of the order details.
 
@@ -10,7 +10,7 @@ This extension provides a "Print Invoice" button on the Admin Orders view screen
 
 1. The gem relies only on the prawn gem, to install you need to add the following lines to your `Gemfile`:
 ```ruby
-gem 'spree_print_invoice' , github: 'spree/spree_print_invoice'
+gem 'spree_print_invoice' , github: 'futhr/spree_print_invoice', branch: '2-0-stable'
 ```
 
 2. Run bundler
@@ -115,5 +115,5 @@ Copyright (c) 2013 Roman Le Négrate, Torsten Rüger, released under the [New BS
 [2]: http://www.fsf.org/licensing/essays/free-sw.html
 [3]: https://github.com/spree/spree_print_invoice/issues
 [4]: https://github.com/thoughtbot/guide
-[5]: https://github.com/spree/spree_print_invoice/tree/master/LICENSE.md
+[5]: https://github.com/spree/spree_print_invoice/blob/2-0-stable/LICENSE.md
 [6]: http://www.localeapp.com/projects/4941
