@@ -8,12 +8,12 @@ This extension provides a "Print Invoice" button on the Admin Orders view screen
 
 ## Installation
 
-1. The gem relies only on the prawn gem, to install you need to add the following lines to your `Gemfile`:
+Add to your `Gemfile`
 ```ruby
 gem 'spree_print_invoice' , github: 'futhr/spree_print_invoice', branch: '2-0-stable'
 ```
 
-2. Run bundler
+Run
 ```
 bundle install
 ```
@@ -77,11 +77,6 @@ end
 
 This is accomplished without `instance_eval`, so that access to instance variables set by the controller is retained.
 
-## Kudos
-
-* Initially written by [Roman Le Négrate](https://github.com/Roman2K)
-* Adopted to Rails 3 by [Torsten Rüger](http://github.com/dancinglightning)
-
 ### Contributing
 
 In the spirit of [free software][2], **everyone** is encouraged to help improve this project.
@@ -109,11 +104,14 @@ Starting point:
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
-Copyright (c) 2013 Roman Le Négrate, Torsten Rüger, released under the [New BSD License][5]
+Copyright (c) 2013 [Roman Le Négrate][7], [Torsten Rüger][8] and other [contributors][9], released under the [New BSD License][5]
 
 [1]: http://prawn.majesticseacreature.com
 [2]: http://www.fsf.org/licensing/essays/free-sw.html
-[3]: https://github.com/spree/spree_print_invoice/issues
+[3]: https://github.com/futhr/spree_print_invoice/issues
 [4]: https://github.com/thoughtbot/guide
-[5]: https://github.com/spree/spree_print_invoice/blob/2-0-stable/LICENSE.md
+[5]: https://github.com/futhr/spree_print_invoice/blob/2-0-stable/LICENSE.md
 [6]: http://www.localeapp.com/projects/4941
+[7]: https://github.com/Roman2K
+[8]: http://github.com/dancinglightning
+[9]: https://github.com/futhr/spree_print_invoice/contributors
