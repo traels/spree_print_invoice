@@ -87,12 +87,12 @@ repeat(:all) do
       make_cell(content: Spree.t(:vat, scope: :print_invoice) , colspan: 2),
     ]
     footer1 = [
-      make_cell(content: Spree.t(:footer_left1, scope: :print_invoice)),
-      make_cell(content: Spree.t(:footer_right1, scope: :print_invoice)),
+      make_cell(content: Spree.t(:footer_left, scope: :print_invoice)),
+      make_cell(content: Spree.t(:footer_right, scope: :print_invoice)),
     ]
     footer2 = [
-      make_cell(content: Spree.t(:footer_left2, scope: :print_invoice)),
-      make_cell(content: Spree.t(:footer_right2, scope: :print_invoice)),
+      make_cell(content: Spree::PrintInvoice::Config[:footer_left]),
+      make_cell(content: Spree::PrintInvoice::Config[:footer_right]),
     ]
     data = [footer0, footer1, footer2]
 

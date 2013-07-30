@@ -2,10 +2,10 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 
 # HEADER
 repeat(:all) do
-  print_invoice_logo = Rails.root.join('app', 'assets', Spree::PrintInvoice::Config[:print_invoice_logo_path])
-  if File.exists? print_invoice_logo
-    image "#{print_invoice_logo}", vposition: :top, height: 40
-  end
+  #print_invoice_logo = Rails.root.join('app', 'assets', Spree::PrintInvoice::Config[:print_invoice_logo_path])
+  #if File.exists? print_invoice_logo
+  #  image "#{print_invoice_logo}", vposition: :top, height: 40
+  #end
 
   grid([0,3], [0,4]).bounding_box do
     font "Helvetica", size: 9, style: :bold
@@ -120,12 +120,12 @@ repeat(:all) do
       make_cell(content: Spree.t(:vat, scope: :print_invoice), colspan: 2),
     ]
     footer1 = [
-      make_cell(content: Spree.t(:footer_left1, scope: :print_invoice)),
-      make_cell(content: Spree.t(:footer_right1, scope: :print_invoice)),
+      make_cell(content: Spree.t(:footer_left, scope: :print_invoice)),
+      make_cell(content: Spree.t(:footer_right, scope: :print_invoice)),
     ]
     footer2 = [
-      make_cell(content: Spree.t(:footer_left2, scope: :print_invoice)),
-      make_cell(content: Spree.t(:footer_right2, scope: :print_invoice)),
+      make_cell(content: Spree::PrintInvoice::Config[:footer_left]),
+      make_cell(content: Spree::PrintInvoice::Config[:footer_right]),
     ]
     data = [footer0, footer1, footer2]
 

@@ -3,11 +3,8 @@ fr:
   spree:
     print_invoice:
       invoice: FACTURE
-      footer_left1: Nom de la société -  Adresse de la société"
-      footer_left2: "N° SIRET société"
-      footer_right1: "Téléphone - adresse courriel"
-      footer_right2: "Enregistrement RCS"
-      print_note: Facture ProForma
+      footer_left: Nom de la société - Adresse de la société"
+      footer_right: Téléphone - Adresse courriel
       invoice_print: Imprimer Facture
       packaging_slip_print: Imprimer Bordereau de Livraison
       packaging_slip: Bordereau de Livraison

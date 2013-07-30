@@ -3,11 +3,8 @@ en:
   spree:
     print_invoice:
       invoice: Customer Invoice
-      footer_left1: "Company Name - Company address"
-      footer_left2: "Company registration 1"
-      footer_right1: "Phone - email"
-      footer_right2: "Company registration 2"
-      print_note: This is not an original invoice (DO NOT SEND THIS TO CUSTOMER)
+      footer_left: Company Name - Company Address
+      footer_right: Phone - Email
       invoice_print: Print Invoice
       packaging_slip_print: Print Slip
       packaging_slip: Packaging Slip
