@@ -2,19 +2,20 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 
 # HEADER
 repeat(:all) do
-  grid([0,0], [0,2]).bounding_box do
-    image "#{Rails.root.to_s}/public/assets/#{Spree::PrintInvoice::Config[:print_invoice_logo_path]}"
+  print_invoice_logo = Rails.root.join('app', 'assets', Spree::PrintInvoice::Config[:print_invoice_logo_path])
+  if File.exists? print_invoice_logo
+    image "#{print_invoice_logo}", vposition: :top, height: 40
   end
 
   grid([0,3], [0,4]).bounding_box do
     font "Helvetica", size: 9, style: :bold
-    text Spree.t(:packaging_slip), align: :right, style: :bold, size: 18
+    text Spree.t(:packaging_slip, scope: :print_invoice), align: :right, style: :bold, size: 18
     move_down 4
     font "Helvetica", size: 9, style: :bold
     text "#{Spree.t(:order_number)} #{@order.number}", align: :right
     move_down 2
-    font "Helvetica", size: 9
-    text "#{Spree.t(:on_date)}: #{I18n.l(@order.completed_at.to_date, format: :long)}", align: :right
+    font "Helvetica", size: 9, style: :bold
+    text "#{Spree.t(:on_date, scope: :print_invoice)}: #{I18n.l(@order.completed_at.to_date, format: :long)}", align: :right
   end
 end
 
@@ -31,13 +32,15 @@ grid([1,0], [6,4]).bounding_box do
     address_cell_billing  = make_cell(content: Spree.t(:billing_address), font_style: :bold)
     address_cell_shipping = make_cell(content: Spree.t(:shipping_address), font_style: :bold)
 
-    billing = "#{bill_address.firstname} #{bill_address.lastname} #{bill_address.address1}"
+    billing = "#{bill_address.firstname} #{bill_address.lastname}"
+    billing << "\n#{bill_address.address1}"
     billing << "\n#{bill_address.address2}" unless bill_address.address2.blank?
     billing << "\n#{@order.bill_address.city}, #{@order.bill_address.state_text} #{@order.bill_address.zipcode}"
     billing << "\n#{bill_address.country.name}"
     billing << "\n#{bill_address.phone}"
 
-    shipping = "#{ship_address.firstname} #{ship_address.lastname} #{ship_address.address1}"
+    shipping = "#{ship_address.firstname} #{ship_address.lastname}"
+    shipping << "\n#{ship_address.address1}"
     shipping << "\n#{ship_address.address2}" unless ship_address.address2.blank?
     shipping << "\n#{@order.ship_address.city}, #{@order.ship_address.state_text} #{@order.ship_address.zipcode}"
     shipping << "\n#{ship_address.country.name}"
@@ -48,16 +51,15 @@ grid([1,0], [6,4]).bounding_box do
   end
 
   move_down 10
-  @column_widths = [270, 230, 40]
+  @column_widths = [500, 40]
   header =  [
-    make_cell(content: Spree.t(:item_description), font_style: :bold),
-    make_cell(content: Spree.t(:item_name, scope: :print_invoice), font_style: :bold),
+    make_cell(content: Spree.t(:name), font_style: :bold),
     make_cell(content: Spree.t(:qty), font_style: :bold),
   ]
   data = [header]
 
   @order.line_items.each do |item|
-    row = [item.variant.product.description, item.variant.product.name, item.quantity.to_s]
+    row = [item.variant.product.name, item.quantity.to_s]
     data += [row]
   end
 
@@ -69,8 +71,6 @@ grid([1,0], [6,4]).bounding_box do
   end
 
   move_down 20
-  text Spree.t(:note), align: :left, size: 12
-  move_down 4
   text Spree.t(:anomaly_message), align: :left, size: 9
 
   move_down 20
@@ -84,15 +84,15 @@ repeat(:all) do
   grid([7,0], [7,4]).bounding_box do
     @column_widths = [270, 270]
     footer0 = [
-      make_cell(content: Spree.t(:no_vat) , colspan: 2),
+      make_cell(content: Spree.t(:vat, scope: :print_invoice) , colspan: 2),
     ]
     footer1 = [
-      make_cell(content: Spree.t(:footer_left1)),
-      make_cell(content: Spree.t(:footer_right1)),
+      make_cell(content: Spree.t(:footer_left1, scope: :print_invoice)),
+      make_cell(content: Spree.t(:footer_right1, scope: :print_invoice)),
     ]
     footer2 = [
-      make_cell(content: Spree.t(:footer_left2)),
-      make_cell(content: Spree.t(:footer_right2)),
+      make_cell(content: Spree.t(:footer_left2, scope: :print_invoice)),
+      make_cell(content: Spree.t(:footer_right2, scope: :print_invoice)),
     ]
     data = [footer0, footer1, footer2]
 
@@ -108,7 +108,7 @@ repeat(:all) do
 end
 
 # PAGE NUMBER
-string  = "page <page> #{Spree.t(:of)} <total>"
+string  = "#{Spree.t(:page, scope: :print_invoice)} <page> #{Spree.t(:of, scope: :print_invoice)} <total>"
 options = {
   at: [bounds.right - 150, 0],
   width: 150,
