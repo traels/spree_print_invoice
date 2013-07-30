@@ -1,3 +1,6 @@
+require 'barby'
+require 'barby/outputter/prawn_outputter'
+
 define_grid(columns: 5, rows: 8, gutter: 10)
 
 # HEADER
@@ -16,6 +19,12 @@ repeat(:all) do
     move_down 2
     font "Helvetica", size: 9, style: :bold
     text "#{Spree.t(:on_date, scope: :print_invoice)}: #{I18n.l(@order.completed_at.to_date, format: :long)}", align: :right
+  end
+
+  # BARCODE
+  bounding_box [385,640], width: 100 do
+    barcode = Barby::Code39.new(@order.number)
+    barcode.annotate_pdf(self, height: 20)
   end
 end
 

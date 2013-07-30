@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'spree', '~> 2.0.0'
   s.add_runtime_dependency 'prawn', '~> 1.0.0.rc2'
+  s.add_runtime_dependency 'has_barcode', '~> 0.2.3'
 
   s.add_development_dependency 'capybara', '~> 2.1.0'
   s.add_development_dependency 'capybara-webkit', '~> 1.0.0'
