@@ -16,6 +16,7 @@ gem 'spree_print_invoice' , github: 'futhr/spree_print_invoice', branch: '2-0-st
 Run
 ```
 bundle install
+rails g spree_print_invoice:install
 ```
 
 3. Enjoy! now displays the items variant options
