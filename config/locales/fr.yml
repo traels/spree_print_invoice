@@ -21,8 +21,5 @@ fr:
       Toute anomalie constatée (colis endommagé(s), produit(s) manquant(s) par rapport au bon de livraison
       ou abîmé(s)) doit être signalée dans les 3 jours suivant la réception.
       Utilisez svp la zone suivante pour notifier l'anomalie constatée.
-    print_invoice:
-      item_name: Nom ou Reference Article
-      'en': "en Anglais"
-      'fr': "en Français"
+    item_name: Nom ou Reference Article
     page: Page
