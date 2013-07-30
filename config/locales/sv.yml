@@ -1,25 +1,29 @@
 ---
 sv:
   spree:
-    customer_invoice: Kundfaktura
-    footer_left1: "Företagsnamn - Företagsadress"
-    footer_left2: "Företagsregistrering 1"
-    footer_right1: "Telefon - e-post"
-    footer_right2: "Företagsregistrering 2"
-    print_note: Detta är inte en ursprunglig faktura (INTE SKICKA DETTA TILL KUND)
-    invoice_print: Skriv ut faktura
-    packaging_slip_print: Skriv ut slip
-    packaging_slip: Förpackning slip
-    order_payment_via: "%{gateway} Kortbetalning #%{nummer} för %{date}"
-    return_note: "NOTERING:"
-    return_message: |
-      I händelse av skada på de produkter som beställs under leveransen, måste du klaga till Isabelle Dufour,
-      per telefon, e-post eller postmail inom tre arbetsdagar efter leverans.
-    no_vat: Moms inte tillämpligt
-    anomaly_message: |
-      Mottagaren måste kontrollera tillståndet av varor på mottagningen.
-      Varje avvikelse noteras [skadad paket (s), saknad produkt (er) i jämförelse med följesedeln
-      eller skadad produkt (er)] skall anmälas inom tre arbetsdagar efter leverans.
-      Snälla, använd följande område för att anmäla noterade avvikelse.
-    item_name: Artikelnamn eller SKU
-    page: Sida
+    print_invoice:
+      invoice: Kundfaktura
+      footer_left1: "Företagsnamn - Företagsadress"
+      footer_left2: "Företagsregistrering 1"
+      footer_right1: "Telefon - e-post"
+      footer_right2: "Företagsregistrering 2"
+      print_note: Detta är inte en ursprunglig faktura (INTE SKICKA DETTA TILL KUND)
+      invoice_print: Skriv ut faktura
+      packaging_slip_print: Skriv ut slip
+      packaging_slip: Förpackning slip
+      payment_via: "%{gateway} betalning #%{number} för %{date}"
+      return_message: |
+        I händelse av skada på de produkter som beställs under leveransen, måste du klaga till Isabelle Dufour,
+        per telefon, e-post eller postmail inom tre arbetsdagar efter leverans.
+      vat: Moms inte tillämpligt
+      anomaly_message: |
+        Mottagaren måste kontrollera tillståndet av varor på mottagningen.
+        Varje avvikelse noteras [skadad paket (s), saknad produkt (er) i jämförelse med följesedeln
+        eller skadad produkt (er)] skall anmälas inom tre arbetsdagar efter leverans.
+        Snälla, använd följande område för att anmäla noterade avvikelse.
+      item_name: Artikelnamn eller SKU
+      page: Sida
+      balance: Saldo
+      unprocessed: Obearbetad
+      of: av
+      on_date: Order Datum
