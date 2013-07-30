@@ -4,9 +4,10 @@
 		<% buttons.each do |button| %>
 		  <%= link_to Spree.t(:"#{button}_print", scope: :print_invoice), spree.admin_order_path(@order, template: button, language: I18n.locale.to_s, format: :pdf), class: 'icon-print button', target: '_blank' %>
 		<% end %>
-		<% if I18n.available_locales && I18n.available_locales.count > 1 %>
+
+		<% if I18n.available_locales && defined?(SpreeI18n) && I18n.available_locales.count > 1 %>
 			<%= select('print_invoice', 'language',
-            I18n.available_locales.collect { |l| [l.upcase, l.to_s] }, { selected: I18n.locale.to_s }, class: 'select2' , style: 'min-width:6em') %>
+        I18n.available_locales.collect { |l| [I18n.backend.translate(l, 'spree.i18n.this_file_language').to_s.upcase, l.to_s] }, { selected: I18n.locale.to_s }, class: 'select2') %>
 		<% end %>
 	</div>
 <% end %>
