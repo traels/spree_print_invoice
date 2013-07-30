@@ -1,11 +1,3 @@
-module Spree
-  module PrintInvoice
-    def self.config(&block)
-      yield(Spree::GoogleBase::Config)
-    end
-  end
-end
-
 module SpreePrintInvoice
   class Engine < Rails::Engine
     require 'spree/core'
@@ -20,6 +12,10 @@ module SpreePrintInvoice
 
     initializer 'spree.print_invoice.environment', before: :load_config_initializers do |app|
       Spree::PrintInvoice::Config = Spree::PrintInvoiceConfiguration.new
+    end
+
+    initializer 'spree.print_invoice.mimetypes' do |app|
+      Mime::Type.register('application/pdf', :pdf) unless Mime::Type.lookup_by_extension(:pdf)
     end
 
     def self.activate

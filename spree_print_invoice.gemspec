@@ -7,7 +7,7 @@ require 'spree_print_invoice/version'
 Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
   s.name         = 'spree_print_invoice'
-  s.version      = SpreePrintInvoice::VERSION
+  s.version      = Spree::PrintInvoice::VERSION
   s.summary      = 'Print invoices from a Spree order'
   s.description  = s.summary
   s.required_ruby_version = '>= 1.9.3'
