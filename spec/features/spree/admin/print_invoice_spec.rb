@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Print Invoice" do
+feature 'Print Invoice' do
   stub_authorization!
 
   background do
@@ -9,6 +9,6 @@ feature "Print Invoice" do
     # page!
   end
 
-  scenario "can print" do
+  scenario 'can print' do
   end
 end
