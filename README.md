@@ -4,7 +4,7 @@
 [![Dependency Status](https://gemnasium.com/futhr/spree_print_invoice.png)](https://gemnasium.com/futhr/spree_print_invoice)
 [![Coverage Status](https://coveralls.io/repos/futhr/spree_print_invoice/badge.png?branch=2-0-stable)](https://coveralls.io/r/futhr/spree_print_invoice)
 
-This extension provides a "Print Invoice" button on the Admin Orders view screen which generates a PDF of the order details.
+This extension provides a "Print Invoice" button (per default) on the Admin Orders view screen which generates a PDF of the order details. It's fully extendable so you can add own _print slips_ from your own Rails app. It also comes with a packaging slip.
 
 ## Installation
 
@@ -19,32 +19,43 @@ bundle install
 rails g spree_print_invoice:install
 ```
 
-3. Enjoy! now displays the items variant options
+Happy printing!
 
 ## Configuration
 
 1. Set the logo path preference to include your store/company logo.
 ```ruby
-Spree::PrintInvoice::Config.set(print_invoice_logo_path: '/path/to/public/images/company-logo.png')
+Spree::PrintInvoice::Config.set(logo_path: '/path/to/assets/images/company-logo.png')
 ```
 
-2. Add your own own footer texts to the locale. The current footer works with `:footer_left1`, `:footer_left2` and `:footer_right1`, `:footer_right2` where the 1 version is on the left in bold, and the 2 version the "value" on the right.
+2. Under admin contiguration you find _Print Invoice Settings_ where you can change standard settings for printing.
 
-3. Override any of the partial templates. they are `address`, `footer`, `totals`, `header`, `bye`, and the `line_items`. In bye the text `:thanks` is printed.  The `:extra_note` hook has been deprecated as Spree no longer supports hooks.
+## Extending with new slips
 
-4. Set `:suppress_anonymous_address` option to get blank addresses for anonymous email addresses (as created by my spree_last_address extension for empty/unknown user info)
+In your Rails app create new prawn template in:
 
-5. Enable packaging slips, by setting
+```
+views/spree/admin/orders/my_custom_slip.pdf.prawn
+```
+
+For each _custom slip_, define its representation in your `config/locales/` for each locale you use:
+
+```yml
+---
+en:
+  spree:
+    print_invoice:
+      buttons:
+        my_custom_slip: My Custom Slip
+```
+
+_Note: You can also add any xtra text keys here for your slip._
+
+Enable your _custom slip_, by adding it to the list of slips you would like to use:
+
 ```ruby
-Spree::PrintInvoice::Config.set(print_buttons: 'invoice,packaging_slip') # comma separated list
+Spree::PrintInvoice::Config.set(print_buttons: 'invoice,packaging_slip,my_custom_slip') # comma separated list
 ```
-
-Use above feature for your own template if you want. For each button_name, define button_name_print text in your locale.
-
-## Todo
-
-* Tests :/
-* Next receipts and then product related stuff with barcodes.
 
 ## Prawn-handler
 
@@ -78,7 +89,7 @@ end
 
 This is accomplished without `instance_eval`, so that access to instance variables set by the controller is retained.
 
-### Contributing
+## Contributing
 
 In the spirit of [free software][2], **everyone** is encouraged to help improve this project.
 
