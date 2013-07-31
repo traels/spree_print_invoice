@@ -7,17 +7,17 @@ describe Spree::Admin::OrdersController do
 
   before { controller.stub spree_current_user: user }
 
-  context "#show" do
+  context '#show' do
     specify do
     end
   end
 
-  context "#save_current_locale" do
+  context '#save_current_locale' do
     specify do
     end
   end
 
-  context "#current_locale" do
+  context '#current_locale' do
     specify do
     end
   end
