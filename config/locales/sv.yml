@@ -2,25 +2,35 @@
 sv:
   spree:
     print_invoice:
-      invoice: Kundfaktura
+      balance: Saldo
+      buttons:
+        invoice: Skriv ut faktura
+        packaging_slip: Skriv ut följesedel
       footer_left: Företagsnamn - Företagsadress
       footer_right: Telefon - E-post
-      invoice_print: Skriv ut faktura
-      packaging_slip_print: Skriv ut slip
-      packaging_slip: Förpackning slip
-      payment_via: "%{gateway} betalning #%{number} den %{date}"
-      return_message: |
-        I händelse av skada på de produkter som beställs under leveransen, måste du klaga till Isabelle Dufour,
-        per telefon, e-post eller postmail inom tre arbetsdagar efter leverans.
-      vat: Moms inte tillämpligt
-      anomaly_message: |
-        Mottagaren måste kontrollera tillståndet av varor på mottagningen.
-        Varje avvikelse noteras [skadad paket (s), saknad produkt (er) i jämförelse med följesedeln
-        eller skadad produkt (er)] skall anmälas inom tre arbetsdagar efter leverans.
-        Snälla, använd följande område för att anmäla noterade avvikelse.
+      invoice: Kundfaktura
       item_name: Artikelnamn eller SKU
-      page: Sida
-      balance: Saldo
-      unprocessed: Obearbetad
       of: av
-      on_date: Order Datum
+      on_date: Order datum
+      packaging_slip: Följesedel
+      page: Sida
+      payment_via: "%{gateway} betalning #%{number} den %{date}"
+      preferences:
+        anomaly_message: Avvikelse meddelande
+        footer_left: Vänster sidfot
+        footer_left_info: Ditt företagsnamn och adress.
+        footer_right: Höger sidfot
+        footer_right_info: Din telefon och e-postadress.
+        page_layout: Sidolayout
+        page_size: Pappers format
+        page_size_info: "LETTER, LEGAL, A4, A5, B4, C5, C6 etc."
+        print_buttons: Utskriftsknappar
+        print_buttons_info: Kommaseparerad lista.
+        print_logo_path: Sökväg för logotyp
+        return_message: Returmeddelande
+      settings: Utskrift inställningar
+      unprocessed: Obearbetad
+      vat: Moms inte tillämpligt
+      pdf_legend: PDF
+      invoice_slip_legend: Faktura / följesedel
+      successfully_updated: Utskrift inställningar har uppdaterats!

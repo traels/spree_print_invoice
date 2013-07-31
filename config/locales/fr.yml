@@ -2,25 +2,35 @@
 fr:
   spree:
     print_invoice:
-      invoice: FACTURE
-      footer_left: Nom de la société - Adresse de la société"
-      footer_right: Téléphone - Adresse courriel
-      invoice_print: Imprimer Facture
-      packaging_slip_print: Imprimer Bordereau de Livraison
-      packaging_slip: Bordereau de Livraison
-      payment_via: "Payé en ligne le %{date} via %{gateway} - %{number}"
-      return_message: |
-        Toute anomalie ou défaut concernant les articles livrés, doit être signalé à Isabelle Dufour,
-        par téléphone, courriel ou lettre, dans les 3 jours suivant la réception.
-      vat: "TVA non applicable, article 293 B du Code Général des Impôts"
-      anomaly_message: |
-        Le destinataire est tenu de vérifier l'état de la marchandise à sa réception.
-        Toute anomalie constatée (colis endommagé(s), produit(s) manquant(s) par rapport au bon de livraison
-        ou abîmé(s)) doit être signalée dans les 3 jours suivant la réception.
-        Utilisez svp la zone suivante pour notifier l'anomalie constatée.
-      item_name: Nom ou Reference Article
-      page: Page
       balance: Balance
-      unprocessed: Non traité
+      buttons:
+        invoice: Imprimer Facture
+        packaging_slip: Imprimer Bordereau de Livraison
+      footer_left: Nom de la société - Adresse de la société
+      footer_right: Téléphone - Adresse courriel
+      invoice: Facture
+      item_name: Nom ou Reference Article
       of: de
       on_date: Date de commande
+      packaging_slip: Bordereau de Livraison
+      page: Page
+      payment_via: "Payé en ligne le %{date} via %{gateway} - %{number}"
+      preferences:
+        anomaly_message: Message d'anomalie
+        footer_left: Contenu pied de gauche
+        footer_left_info: Votre nom et adresse d'entreprise.
+        footer_right: Contenu pied de droit
+        footer_right_info: Votre téléphone et votre adresse e-mail.
+        page_layout: La mise en page
+        page_size: Taille de la page
+        page_size_info: "LETTER, LEGAL, A4, A5, B4, C5, C6 etc."
+        print_buttons: Boutons Imprimer
+        print_buttons_info: Séparés par des virgules.
+        print_logo_path: Chemin de logo
+        return_message: Message de retour
+      settings: Les paramètres d'impression des factures
+      unprocessed: Non traité
+      vat: "TVA non applicable, article 293 B du Code Général des Impôts"
+      pdf_legend: PDF
+      invoice_slip_legend: Facture / Slip
+      successfully_updated: Les paramètres d'impression facture a été mise à jour avec succès!

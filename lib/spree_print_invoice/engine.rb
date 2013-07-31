@@ -11,7 +11,7 @@ module SpreePrintInvoice
     end
 
     initializer 'spree.print_invoice.environment', before: :load_config_initializers do |app|
-      Spree::PrintInvoice::Config = Spree::PrintInvoiceConfiguration.new
+      Spree::PrintInvoice::Config = Spree::PrintInvoiceSetting.new
     end
 
     def self.activate
