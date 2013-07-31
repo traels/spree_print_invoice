@@ -80,7 +80,7 @@ grid([1,0], [6,4]).bounding_box do
   end
 
   move_down 20
-  text Spree.t(:anomaly_message), align: :left, size: 9
+  text Spree::PrintInvoice::Config[:anomaly_message], align: :left, size: 9
 
   move_down 20
   bounding_box([0, cursor], width: 540, height: 250) do

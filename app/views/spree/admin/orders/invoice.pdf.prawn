@@ -118,7 +118,7 @@ grid([1,0], [6,4]).bounding_box do
   end
 
   move_down 20
-  text Spree.t(:return_message, scope: :print_invoice), align: :left, size: 9
+  text Spree::PrintInvoice::Config[:return_message], align: :left, size: 9
 end
 
 # FOOTER
