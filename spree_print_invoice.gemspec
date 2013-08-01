@@ -36,6 +36,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda-matchers', '~> 2.2'
   s.add_development_dependency 'i18n-spec', '~> 0.4.0'
   s.add_development_dependency 'fuubar', '>= 0.0.1'
+  s.add_development_dependency 'coffee-rails', '3.2.2'
+  s.add_development_dependency 'sass-rails', '3.2.6'
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'launchy'
   s.add_development_dependency 'coveralls'
