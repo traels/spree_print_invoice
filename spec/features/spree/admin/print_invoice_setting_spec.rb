@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Settings for Print Invoice' do
+feature 'Settings for Print Invoice', js: true do
   given!(:admin) { create(:admin_user) }
 
   scenario 'update settings' do

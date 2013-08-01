@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Print Invoice' do
+feature 'Print Invoice', js: true do
   stub_authorization!
 
   background do
