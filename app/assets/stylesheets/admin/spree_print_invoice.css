@@ -1,2 +1,4 @@
-/* select2 adjustment for content-header */
-#content-header .page-actions .select2-container { text-align: left; }
+/*
+ *= require admin/spree_backend
+ *= require_tree .
+*/

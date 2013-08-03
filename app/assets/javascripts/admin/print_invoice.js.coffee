@@ -1,5 +1,5 @@
 window.MyNamespace = window.MyNamespace or {}
-window.MyNamespace.Uri = window.MyNamespace.Uri or {}
+_window.MyNamespace.Uri = window.MyNamespace.Uri or {}
 
 ((ns) ->
   ns.SetQueryStringParameter = (url, parameterName, parameterValue) ->
@@ -30,3 +30,5 @@ $(document).ready ->
       changedUrl = MyNamespace.Uri.SetQueryStringParameter(originalUrl, 'language', selected_language)
       $(this).prop('href', changedUrl)
 
+$(document).ready ->
+  $('[data-provide="select2"]').select2()
