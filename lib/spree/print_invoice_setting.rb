@@ -8,5 +8,13 @@ module Spree
     preference :footer_right,            :string, default: ''
     preference :return_message,          :text,   default: ''
     preference :anomaly_message,         :text,   default: ''
+
+    def page_sizes
+      ::Prawn::Document::PageGeometry::SIZES.keys
+    end
+
+    def page_layouts
+      %w(landscape portrait)
+    end
   end
 end

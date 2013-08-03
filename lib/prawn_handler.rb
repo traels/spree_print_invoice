@@ -16,7 +16,7 @@ module ActionView
           @pdf ||= ::Prawn::Document.new
         end
 
-      private
+        private
 
         def method_missing(method, *args, &block)
           pdf.respond_to?(method) ? pdf.send(method, *args, &block) : super

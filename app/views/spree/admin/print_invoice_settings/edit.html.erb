@@ -22,12 +22,11 @@
             </div>
             <div class="field">
               <label><%= Spree.t(:page_size, scope: [:print_invoice, :preferences]) %></label><br>
-              <%= text_field_tag('preferences[page_size]', Spree::PrintInvoice::Config[:page_size], class: 'fullwidth') %>
-              <span class="info"><%= Spree.t(:page_size_info, scope: [:print_invoice, :preferences]) %></span>
+              <%= select_tag('preferences[page_size]', options_for_select(Spree::PrintInvoice::Config.page_sizes, Spree::PrintInvoice::Config[:page_size]), class: 'fullwidth', data: { provide: 'select2' }) %></span>
             </div>
             <div class="field">
               <label><%= Spree.t(:page_layout, scope: [:print_invoice, :preferences]) %></label><br>
-              <%= select_tag('preferences[page_layout]', options_for_select(['landscape', 'portrait'], Spree::PrintInvoice::Config[:page_layout]), class: 'select2 fullwidth') %>
+              <%= select_tag('preferences[page_layout]', options_for_select(Spree::PrintInvoice::Config.page_layouts, Spree::PrintInvoice::Config[:page_layout]), class: 'fullwidth', data: { provide: 'select2' }) %>
             </div>
           </fieldset>
         </div>

@@ -7,7 +7,7 @@
 
 		<% if I18n.available_locales && defined?(SpreeI18n) && I18n.available_locales.count > 1 %>
 			<%= select('print_invoice', 'language',
-        I18n.available_locales.collect { |l| [I18n.backend.translate(l, 'spree.i18n.this_file_language').to_s.upcase, l.to_s] }, { selected: I18n.locale.to_s }, class: 'select2') %>
+        I18n.available_locales.collect { |l| [I18n.backend.translate(l, 'spree.i18n.this_file_language').to_s.upcase, l.to_s] }, { selected: I18n.locale.to_s }, data: { provide: 'select2' }) %>
 		<% end %>
 	</div>
 <% end %>

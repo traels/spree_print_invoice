@@ -21,7 +21,7 @@ module Prawn
 end
 
 describe 'PrawnHandler' do
-  it 'test_compatibility_with_action_view' do
+  xit 'test_compatibility_with_action_view' do
     pending 'It is partly ported from old test unit'
     view = ActionView::Base.new
     result = view.render file: File.dirname(__FILE__) + '/test.pdf.prawn'
