@@ -16,6 +16,8 @@ Spree::Admin::OrdersController.class_eval do
     end
   end
 
+  private
+
   def save_current_locale
     @current_locale = I18n.locale
   end
