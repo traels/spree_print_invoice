@@ -11,10 +11,10 @@
         <div class="alpha six columns" data-hook="pdf">
           <fieldset class="no-border-bottom">
             <legend align="center"><%= Spree.t(:pdf_legend, scope: :print_invoice) %></legend>
-            <div class="field">
-              <label><%= Spree.t(:print_logo_path, scope: [:print_invoice, :preferences]) %></label><br>
-              <%= text_field_tag('preferences[print_invoice_logo_path]', Spree::PrintInvoice::Config[:print_invoice_logo_path], class: 'fullwidth') %>
-            </div>
+            <!-- <div class="field">
+              <label><%#= Spree.t(:print_logo_path, scope: [:print_invoice, :preferences]) %></label><br>
+              <%#= text_field_tag('preferences[print_invoice_logo_path]', Spree::PrintInvoice::Config[:print_invoice_logo_path], class: 'fullwidth') %>
+             </div>-->
             <div class="field">
               <label><%= Spree.t(:print_buttons, scope: [:print_invoice, :preferences]) %></label><br>
               <%= text_field_tag('preferences[print_buttons]', Spree::PrintInvoice::Config[:print_buttons], class: 'fullwidth') %>

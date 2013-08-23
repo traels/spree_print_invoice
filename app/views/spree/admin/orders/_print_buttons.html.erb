@@ -5,9 +5,9 @@
 		  <%= link_to Spree.t(:"#{button}", scope: [:print_invoice, :buttons], default: 'PDF Slip'), spree.admin_order_path(@order, template: button, language: I18n.locale.to_s, format: :pdf), class: 'icon-print button', target: '_blank' %>
 		<% end %>
 
-		<% if I18n.available_locales && defined?(SpreeI18n) && I18n.available_locales.count > 1 %>
-			<%= select('print_invoice', 'language',
+		<%# if I18n.available_locales && defined?(SpreeI18n) && I18n.available_locales.count > 1 %>
+			<%#= select('print_invoice', 'language',
         I18n.available_locales.collect { |l| [I18n.backend.translate(l, 'spree.i18n.this_file_language').to_s.upcase, l.to_s] }, { selected: I18n.locale.to_s }, data: { provide: 'select2' }) %>
-		<% end %>
+		<%# end %>
 	</div>
 <% end %>

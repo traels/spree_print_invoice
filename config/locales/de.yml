@@ -1,0 +1,36 @@
+---
+de:
+  spree:
+    print_invoice:
+      balance: Balance
+      buttons:
+        invoice: Print Invoice
+        packaging_slip: Print Slip
+      footer_left: Company Name - Company Address
+      footer_right: Phone - Emailp
+      invoice: Customer Invoice
+      item_name: Item Name or SKU
+      of: of
+      on_date: Order Date
+      packaging_slip: Packaging Slip
+      page: Page
+      payment_via: "%{gateway} Online Payment #%{number} on %{date}"
+      preferences:
+        anomaly_message: Order Anomaly Message
+        footer_left: Left footer content
+        footer_left_info: Your company name and address.
+        footer_right: Right footer content
+        footer_right_info: Your phone and email address.
+        page_layout: Page Layout
+        page_size: Page Size
+        page_size_info: "LETTER, LEGAL, A4, A5, B4, C5, C6 etc."
+        print_buttons: Print Buttons
+        print_buttons_info: Comma separated list.
+        print_logo_path: Print Invoice Logo Path
+        return_message: Order Return Message
+      settings: Print Invoice Settings
+      unprocessed: Unprocessed
+      vat: VAT not applicable
+      pdf_legend: PDF
+      invoice_slip_legend: Invoice / Slip
+      successfully_updated: Print invoice settings has been successfully updated!
