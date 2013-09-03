@@ -1,25 +1,29 @@
-window.MyNamespace = window.MyNamespace or {}
-_window.MyNamespace.Uri = window.MyNamespace.Uri or {}
+window.MyNamespace = window.MyNamespace || {};
 
-((ns) ->
-  ns.SetQueryStringParameter = (url, parameterName, parameterValue) ->
-    otherQueryStringParameters = ''
-    urlParts = url.split('?')
-    baseUrl = urlParts[0]
-    queryString = urlParts[1]
-    itemSeparator = ''
-    if queryString
-      queryStringParts = queryString.split('&')
-      i = 0
+ns = window.MyNamespace
 
-      while i < queryStringParts.length
-        unless queryStringParts[i].split('=')[0] is parameterName
-          otherQueryStringParameters += itemSeparator + queryStringParts[i]
-          itemSeparator = '&'
-        i++
-    newQueryStringParameter = itemSeparator + parameterName + '=' + parameterValue
-    baseUrl + '?' + otherQueryStringParameters + newQueryStringParameter
-) window.MyNamespace.Uri
+try
+  ((ns) ->
+    ns.SetQueryStringParameter = (url, parameterName, parameterValue) ->
+      otherQueryStringParameters = ''
+      urlParts = url.split('?')
+      baseUrl = urlParts[0]
+      queryString = urlParts[1]
+      itemSeparator = ''
+      if queryString
+        queryStringParts = queryString.split('&')
+        i = 0
+
+        while i < queryStringParts.length
+          unless queryStringParts[i].split('=')[0] is parameterName
+            otherQueryStringParameters += itemSeparator + queryStringParts[i]
+            itemSeparator = '&'
+          i++
+      newQueryStringParameter = itemSeparator + parameterName + '=' + parameterValue
+      baseUrl + '?' + otherQueryStringParameters + newQueryStringParameter
+  ) window.MyNamespace.Uri
+catch error
+  console.log(error)
 
 $(document).ready ->
   $('#print_invoice_language').change (e) ->
