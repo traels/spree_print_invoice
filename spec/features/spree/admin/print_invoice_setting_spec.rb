@@ -8,7 +8,7 @@ feature 'Settings for Print Invoice', js: true do
     click_link 'Configuration'
     click_link 'Print Invoice Settings'
 
-    fill_in 'preferences_print_invoice_logo_path', with: '/somewhere/logo.png'
+    #fill_in 'preferences_print_invoice_logo_path', with: '/somewhere/logo.png'
     fill_in 'preferences_print_buttons', with: 'invoice,packaging_slip'
     select  'A4', from: 'preferences_page_size'
     select  'portrait', from: 'preferences_page_layout'
@@ -20,7 +20,7 @@ feature 'Settings for Print Invoice', js: true do
     click_button 'Update'
 
     setting = Spree::PrintInvoiceSetting.new
-    setting[:print_invoice_logo_path].should eq '/somewhere/logo.png'
+    #setting[:print_invoice_logo_path].should eq '/somewhere/logo.png'
     setting[:print_buttons].should eq 'invoice,packaging_slip'
     setting[:page_size].should eq 'A4'
     setting[:page_layout].should eq 'portrait'

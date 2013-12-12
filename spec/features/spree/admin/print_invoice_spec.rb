@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Print Invoice', js: true do
+feature 'Print Invoice' do
   stub_authorization!
 
   given!(:user)   { create(:user, email: 'hi@futhr.io') }
@@ -64,32 +64,33 @@ feature 'Print Invoice', js: true do
       show_invoice_pdf_for order
     end
 
-    context 'with more options' do
-      background do
-        set_global_locales [:en, :sv, :fi]
-      end
-
-      scenario 'when having multiple locales' do
-        navigate_thru_filters_with order
-
-        within_table('listing_orders') { click_icon :edit }
-
-        expect(page).to have_link 'Print Invoice'
-        expect(page).to have_link 'Print Slip'
-        expect(page).to have_select 'print_invoice_language', selected: 'ENGLISH (US)'
-
-        # within('select#print_invoice_language') do
-        #   find('option[value=fi]').text.should eq 'SUOMI'
-        #   find('option[value=sv]').text.should eq 'SVENSKA'
-        # end
-
-        pending 'select2 helpers require label'
-        select 'SUOMI', from: 'ENGLISH (US)'
-        select 'SVENSKA', from: 'ENGLISH (US)'
-
-        show_invoice_pdf_for order
-      end
-    end
+# test disabled as code for invoice switch is also disabled
+#    context 'with more options' do
+#      background do
+#        set_global_locales [:en, :sv, :fi]
+#      end
+#
+#      scenario 'when having multiple locales' do
+#        navigate_thru_filters_with order
+#
+#        within_table('listing_orders') { click_icon :edit }
+#
+#        expect(page).to have_link 'Print Invoice'
+#        expect(page).to have_link 'Print Slip'
+#        expect(page).to have_select 'print_invoice_language', selected: 'ENGLISH (US)'
+#
+#        # within('select#print_invoice_language') do
+#        #   find('option[value=fi]').text.should eq 'SUOMI'
+#        #   find('option[value=sv]').text.should eq 'SVENSKA'
+#        # end
+#
+#        pending 'select2 helpers require label'
+#        select 'SUOMI', from: 'ENGLISH (US)'
+#        select 'SVENSKA', from: 'ENGLISH (US)'
+#
+#        show_invoice_pdf_for order
+#      end
+#    end
   end
 
   private
